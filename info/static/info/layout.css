@@ -1,4 +1,13 @@
-.avatar {
-    height: 10%;
-    width: 20%;
+.avatar, .name, .social {
+    display: flex;
+    justify-content: center;
 }
+
+img {
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+}
+
+
+
