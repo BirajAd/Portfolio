@@ -28,32 +28,18 @@
 	                    </div>
     	            </div>
                 </div>
-				<div class="row">
-					<div class="col-md-6 ml-auto mr-auto">
-                        <div class="profile-tabs">
-                          <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                                  <i class="material-icons">camera</i>
-                                  Studio
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#works" role="tab" data-toggle="tab">
-                                  <i class="material-icons">palette</i>
-                                    Work
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                                  <i class="material-icons">favorite</i>
-                                    Favorite
-                                </a>
-                            </li>
-                          </ul>
-                        </div>
-    	    </div>
-        </div>
+    </div>
 
+    <div>
+        <div class="row" style="display: flex; justify-content: center">
+            <a href="{% url 'home' %}" class="btn btn-just-icon btn-link btn-github">Home</a>
+            <a href="{% url 'projects' %}" class="btn btn-just-icon btn-link btn-github">Projects</i></a>
+            <a href="{% url 'contact' %}" class="btn btn-just-icon btn-link btn-github">Contact</i></a>
+        </div>
+    </div>
+
+    <body style="margin-left: 25%; margin-right: 25%">
+        {% block content %}{% endblock content %}
+    </body>
 
 </body>

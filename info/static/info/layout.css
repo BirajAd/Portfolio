@@ -3,6 +3,11 @@
     justify-content: center;
 }
 
+body {
+    margin-left: 400;
+    padding: 10;
+}
+
 img {
     border-radius: 50%;
     height: 30%;
