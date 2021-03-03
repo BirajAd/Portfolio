@@ -6,7 +6,7 @@ class Project(models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=200)
     repository = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='p_images')
+    image = models.ImageField(upload_to='images/')
     done_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="list_project")
 
     def __str__(self):

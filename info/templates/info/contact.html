@@ -1,5 +1,33 @@
 {% extends 'info/layout.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>Contact is good and nice and very nice and very very very very nice</h2>
+<head>
+    <link href="{% static 'info/projects.css' %}" rel="stylesheet">
+</head>
+
+    <div class="p_title mt-1">
+        <img class="pr_img mr-3" src="{{ project.image.url }}" alt="image" style="float: left">
+        <div class="pr_title">
+            <h3 style="font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 3;">{{ project.name }}</h3>
+            <h4 style="font-size: small;">Feb 2018 - April 2018</h4>
+        </div>
+    </div>
+
+    <!-- <div>{{description}}</div> -->
+    <div class="contain mt-4">
+        <div class="column">
+            <div class="comment">
+                    <div class="timeline mt-1"></div>
+                    <div class="circle mt-1"></div>
+                    <p style="display: flex; justify-content: left;">name</p>
+            </div>
+            <div class="comment">
+                <div class="timeline mt-1"></div>
+                <div class="circle mt-1"></div>
+                <p style="display: flex; justify-content: left;">name</p>
+            </div>
+        </div>
+    </div></br>
+
 {% endblock content %}

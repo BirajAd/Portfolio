@@ -1,6 +1,25 @@
 {% extends 'info/layout.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>Content for My App</h2>
-    <p>Stuff etc etc.</p>
+    <head>
+        <link href="{% static 'info/index.css' %}" rel="stylesheet">
+    </head>
+
+    <h2>About me</h2>
+    <p style="display: flex; justify-content: center;">
+        My name is Biraj, a student at Minnesota State University majoring in Computer Information Technology and minoring in Mathematics.
+        I am graduating in May 2021. I am currently looking for full-time employment and also working on learning some of the new technologies.
+        My areas of interests include Software development and Data Science. I love software development because with that we can turn our
+        ideas into reality and Data Science is a really hot field right now. I love working with AI and exploring technologies in the 
+        field of Natural Language processing.
+    </p>
+
+    <p style="display: flex; justify-content: center;">
+        I have completed some projects like ReviewForStudent in the space of software development, where we built a platform for students to 
+        share their experiences with different businesses. Besides, software development projects, I also have participated in some  
+        hackathons like Mid-west Data Science competition, also known as MUDAC. After participating in the competition I got to explore more
+        about the data science world and did some other projects in this space, which you can also find in the projects tab.
+
+    </p>
 {% endblock content %}

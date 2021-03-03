@@ -1,5 +1,32 @@
 {% extends 'info/layout.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>Content for Project</h2>
+    <head>
+        <link href="{% static 'info/projects.css' %}" rel="stylesheet">
+    </head>
+
+    {% for project, description in projects.items %}
+        <div class="p_title mt-1">
+            <img class="pr_img mr-3" src="{{ project.image.url }}" alt="image" style="float: left">
+            <div class="pr_title">
+                <h3 style="font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 3;">{{ project.name }}</h3>
+                <h4 style="font-size: small;">Feb 2018 - April 2018</h4>
+            </div>
+        </div>
+
+        <!-- <div>{{description}}</div> -->
+        <div class="contain mt-4">
+            <div class="column">
+                {% for d in description %}
+                <div class="comment">
+                        <div class="timeline mt-1"></div>
+                        <div class="circle mt-1"></div>
+                        <p style="display: flex; justify-content: left;">{{d}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div></br>
+    {% endfor %}
+
 {% endblock content %}
