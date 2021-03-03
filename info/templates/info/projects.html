@@ -10,8 +10,10 @@
         <div class="p_title mt-1">
             <img class="pr_img mr-3" src="{{ project.image.url }}" alt="image" style="float: left">
             <div class="pr_title">
-                <h3 style="font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 3;">{{ project.name }}</h3>
-                <h4 style="font-size: small;">Feb 2018 - April 2018</h4>
+                <a style="display:block" href="{{ project.repository }}">
+                    <h3 style="font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 3;">{{ project.name }}</h3>
+                </a>
+                    <h4 style="font-size: small;">{{ project.start_date|date:"M" }} {{project.start_date.year}} - {{project.end_date|date:"M"}} {{project.end_date.year}}</h4>
             </div>
         </div>
 
