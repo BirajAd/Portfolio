@@ -4,16 +4,18 @@
 {% block content %}
     <head>
         <link href="{% static 'info/index.css' %}" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <h2>About me</h2>
     <p style="display: inline; justify-content: center;">
-        My name is Biraj, a student at <a href="https://mankato.mnsu.edu/"><em>Minnesota State University</em></a> majoring in Computer Information Technology and minoring in Mathematics.
+        I am Biraj, a student at <a href="https://mankato.mnsu.edu/"><em>Minnesota State University</em></a> majoring in Computer Information Technology and minoring in Mathematics.
         I am graduating in May 2021. I am currently looking for full-time employment and also working on learning some of the new technologies.
         My areas of interests include Software development and Data Science. I love software development because with that we can turn our
         ideas into reality and Data Science is a really hot field right now. I love working with AI and exploring technologies in the 
         field of Natural Language processing.
-    </p>
+    </p></br><span></span>
 
     <p style="display: flex; justify-content: center;">
         I have completed some projects like ReviewForStudent in the space of software development, where we built a platform for students to 
@@ -23,7 +25,14 @@
 
     </p>
 
-    <div class="contact">
-        <h2>Contact:</h2> You can reach me at <a href="mailto:adhikari.biraj1@gmail.com">adhikari.biraj1@gmail.com</a>.<br>
+    <div class="footer" style="justify-content: center;">
+        <div style="display: inline; justify-content: center; align-items: center;"><h1>Contact</h1></div>
+        <!-- <h2>Contact:</h2> You can reach me at <a href="mailto:adhikari.biraj1@gmail.com">adhikari.biraj1@gmail.com</a>.<br> -->
+        <div class="column">
+            <h3><i class="fa fa-envelope-o"></i> Email: <a href="mailto:adhikari.biraj1@gmail.com">adhikari.biraj1@gmail.com</a></h3>
+            <h3><i class="fas fa-phone" style="color: teal;"></i> Phone: <a href="tel:201-554-9034">201-554-9034</a></h3>
+            <h3><i class='fab fa-github'></i> Github: <a href="https://github.com/BirajAd">BirajAd</a></h3>
+            <h3><i class='fab fa-linkedin' style="color: #0077B5"></i> LinkedIn: <a href="https://www.linkedin.com/in/biraj-adhikari-9b309a145/">Biraj Adhikari</a></h3>
+        </div>
     </div>
 {% endblock content %}

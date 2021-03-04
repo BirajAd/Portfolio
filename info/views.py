@@ -11,10 +11,9 @@ def project(request):
     descriptions = dict()
     for i in a:
         descriptions[i] = i.description.split(',')
-    print("Description",descriptions)
     return render(request, "info/projects.html", {
         "projects": descriptions
     })
 
-def contact(request):
-    return render(request, "info/contact.html")
+def qualification(request):
+    return render(request, "info/qualification.html")
