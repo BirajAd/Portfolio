@@ -10,7 +10,7 @@ def project(request):
     a = User.objects.get(username="birajad").list_project.all()
     descriptions = dict()
     for i in a:
-        descriptions[i] = i.description.split(',')
+        descriptions[i] = i.description.split('$')
     return render(request, "info/projects.html", {
         "projects": descriptions
     })
