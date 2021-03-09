@@ -3,6 +3,8 @@ version: '3'
 services: 
     db:
         image: postgres
+        environment:
+        - POSTGRES_PASSWORD=postgres
 
     web:
         build: .
@@ -10,5 +12,6 @@ services:
             - .:/usr/src/app
         ports:
             - "8000:8000"
-        depends_on: 
+        depends_on:
             - db
+        tty: true
