@@ -41,8 +41,8 @@ CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ORIGIN_WHITELIST = [
     'http://google.com',
-    'https://portfolio-biraj.herokuapp.com/info/',
-    'https://kit.fontawesome.com/',
+    'https://portfolio-biraj.herokuapp.com',
+    'https://kit.fontawesome.com',
     'http://localhost:8000',
     'http://0.0.0.0:8000'
 ]
