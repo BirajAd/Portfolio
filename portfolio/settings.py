@@ -14,11 +14,17 @@ from pathlib import Path
 import os
 import django_heroku
 import dj_database_url
+import dotenv
 from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#loading local database
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 
 # Quick-start development settings - unsuitable for production
@@ -53,7 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.Middleware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -80,16 +86,19 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'myDatabase',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'myDatabase',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#     }
+# }
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -139,3 +148,6 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
