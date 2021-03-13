@@ -37,12 +37,22 @@ SECRET_KEY = 'e#8_9me#l1kzt^r&un-@5$7=oew&h&=r*#(wc1wrs@*_uk$j(g'
 DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0", "localhost"]
+CORS_ORIGIN_ALLOW_ALL=True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://google.com',
+    'https://portfolio-biraj.herokuapp.com/info/',
+    'https://kit.fontawesome.com/',
+    'http://localhost:8000',
+    'http://0.0.0.0:8000'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'info',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +64,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
