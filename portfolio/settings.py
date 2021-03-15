@@ -36,7 +36,7 @@ SECRET_KEY = 'e#8_9me#l1kzt^r&un-@5$7=oew&h&=r*#(wc1wrs@*_uk$j(g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0", "localhost"]
+ALLOWED_HOSTS = ["0.0.0.0", "localhost", "127.0.0.1"]
 CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ORIGIN_WHITELIST = [
@@ -52,6 +52,7 @@ CORS_ORIGIN_WHITELIST = [
 
 INSTALLED_APPS = [
     'info',
+    'fontawesome-free',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,10 +63,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
